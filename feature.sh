@@ -3,7 +3,7 @@
 helpFunction()
 {
    echo ""
-   echo "Usage: $0 -t TARGET -d TARGET_DIR"
+   echo "Usage: feature.sh -t TARGET -d TARGET_DIR"
    echo -e "\t-t Name of the target protein (.seq extension is required)"
    echo -e "\t-d Name of the directory where the portein seq is located"
    exit 1 # Exit script after printing help
@@ -19,14 +19,15 @@ do
 done
 
 # Print helpFunction in case parameters are empty
-if [ -z "TARGET" ] || [ -z "TARGET_DIR" ] 
+if [ -z "$TARGET" ] || [ -z "$TARGET_DIR" ] 
 then
    echo "Some or all of the parameters are empty";
    helpFunction
 fi
 
-echo "TARGET"
-echo "TARGET_DIR"
+echo $TARGET
+echo $TARGET_DIR
+
 TARGET_SEQ="${TARGET_DIR}/${TARGET}.seq" # fasta format
 PLMDCA_DIR="plmDCA/plmDCA_asymmetric_v2/"
 OUTPUT_DIR="${TARGET}_out"
