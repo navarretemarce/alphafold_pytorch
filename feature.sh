@@ -4,9 +4,10 @@ TARGET="T1019s2"
 TARGET_DIR="test_data"
 TARGET_SEQ="${TARGET_DIR}/${TARGET}.seq" # fasta format
 PLMDCA_DIR="plmDCA/plmDCA_asymmetric_v2/"
+OUTPUT_DIR="${TARGET}_out"
 
 # generate domain crops from target seq
-python feature.py -s $TARGET_SEQ -c
+python3 feature.py -s $TARGET_SEQ -c
 
 for domain in ${TARGET_DIR}/*.seq; do
 	out=${domain%.seq}
@@ -17,7 +18,7 @@ for domain in ${TARGET_DIR}/*.seq; do
 done
 
 # make target features data and generate ungap target aln file for plmDCA
-python feature.py -s $TARGET_SEQ -f
+python3 feature.py -s $TARGET_SEQ -f -o $OUTPUT
 
 cd $PLMDCA_DIR
 for aln in ../../${TARGET_DIR}/*.aln; do
@@ -27,4 +28,4 @@ done
 cd -
 
 # run again to update target features data
-python feature.py -s $TARGET_SEQ -f
+python3 feature.py -s $TARGET_SEQ -f -o $OUTPUT
