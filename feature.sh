@@ -12,7 +12,7 @@ python3 feature.py -s $TARGET_SEQ -c
 for domain in ${TARGET_DIR}/*.seq; do
 	out=${domain%.seq}
 	echo "Generate MSA files for ${out}"
-	hhblits -cpu 4 -i ${out}.seq -d databases/uniclust30_2018_08/uniclust30_2018_08 -oa3m ${out}.a3m -ohhm ${out}.hhm -n 3
+	hhblits -cpu 16 -i ${out}.seq -d databases/uniclust30_2018_08/uniclust30_2018_08 -oa3m ${out}.a3m -ohhm ${out}.hhm -n 3
 	reformat.pl ${out}.a3m ${out}.fas
 	psiblast -subject ${out}.seq -in_msa ${out}.fas -out_ascii_pssm ${out}.pssm
 done
