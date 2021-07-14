@@ -9,11 +9,11 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-while getopts "a:b:" opt
+while getopts "t:d:" opt
 do
    case "$opt" in
-      a ) TARGET="$OPTARG" ;;
-      b ) TARGET_DIR="$OPTARG" ;;
+      t ) TARGET="$OPTARG" ;;
+      d ) TARGET_DIR="$OPTARG" ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
