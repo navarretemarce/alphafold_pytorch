@@ -34,7 +34,7 @@ OUTPUT_DIR="${TARGET}_out"
 OUTPUT = "${TARGET_DIR}/${TARGET} _out"
 
 # generate domain crops from target seq
-python3 feature.py -s $TARGET_SEQ -c
+python3 feature.py -s $TARGET_SEQ -c -o $OUTPUT
 
 for domain in ${TARGET_DIR}/*.seq; do
 	out=${domain%.seq}
