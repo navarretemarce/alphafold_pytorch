@@ -96,7 +96,6 @@ For convenience, I provided a shell script `feature.sh` to generate those requir
 3. Setup [plmDCA](https://github.com/magnusekeberg/plmDCA), which need `Matlab` or `Octave` to run this code. Here I provided a modified `plmDCA.m` file for Octave which can save the intermediate data that alphafold needs, but I haven't test it in matlab.
     ```bash
     git clone https://github.com/magnusekeberg/plmDCA.git
-    mv plmDCA/plmDCA_asymmetric_v2 plmDCA/plmDCA
     cp plmDCA.m plmDCA/plmDCA_asymmetric_v2/
     # mex .c file, if you use matlab you need do this in matlab console
     cd plmDCA/plmDCA_asymmetric_v2/functions/; for i in *.c; do octave --eval "mex $i";done
