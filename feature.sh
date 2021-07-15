@@ -25,8 +25,8 @@ then
    helpFunction
 fi
 
-echo $TARGET
-echo $TARGET_DIR
+echo "Target seq was defined as:" $TARGET
+echo "Target dir was established as:" $TARGET_DIR
 
 TARGET_SEQ="${TARGET_DIR}/${TARGET}.seq" # fasta format
 PLMDCA_DIR="plmDCA/plmDCA_asymmetric_v2/"
