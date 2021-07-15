@@ -31,6 +31,7 @@ echo "Target dir was established as:" $TARGET_DIR
 TARGET_SEQ="${TARGET_DIR}/${TARGET}.seq" # fasta format
 PLMDCA_DIR="plmDCA/plmDCA_asymmetric_v2/"
 OUTPUT_DIR="${TARGET}_out"
+OUTPUT = "${TARGET_DIR}/${TARGET} _out"
 
 # generate domain crops from target seq
 python3 feature.py -s $TARGET_SEQ -c
